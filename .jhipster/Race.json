@@ -1,0 +1,29 @@
+{
+    "name": "Race",
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "blog",
+            "otherEntityName": "resultat",
+            "otherEntityRelationshipName": "race"
+        }
+    ],
+    "changelogDate": "20181019101624",
+    "entityTableName": "race",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
