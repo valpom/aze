@@ -95,14 +95,14 @@ export class ResultatUpdate extends React.Component<IResultatUpdateProps, IResul
                   </AvGroup>
                 ) : null}
                 <AvGroup>
-                  <Label id="nameLabel" for="name">
-                    Name
+                  <Label id="chronoLabel" for="chrono">
+                    Chrono
                   </Label>
                   <AvField
-                    id="resultat-name"
+                    id="resultat-chrono"
                     type="string"
                     className="form-control"
-                    name="name"
+                    name="chrono"
                     validate={{
                       required: { value: true, errorMessage: 'This field is required.' },
                       number: { value: true, errorMessage: 'This field should be a number.' }

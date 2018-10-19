@@ -88,8 +88,8 @@ export class Resultat extends React.Component<IResultatProps, IResultatState> {
                   <th className="hand" onClick={this.sort('id')}>
                     ID <FontAwesomeIcon icon="sort" />
                   </th>
-                  <th className="hand" onClick={this.sort('name')}>
-                    Name <FontAwesomeIcon icon="sort" />
+                  <th className="hand" onClick={this.sort('chrono')}>
+                    Chrono <FontAwesomeIcon icon="sort" />
                   </th>
                   <th>
                     User <FontAwesomeIcon icon="sort" />
@@ -108,7 +108,7 @@ export class Resultat extends React.Component<IResultatProps, IResultatState> {
                         {resultat.id}
                       </Button>
                     </td>
-                    <td>{resultat.name}</td>
+                    <td>{resultat.chrono}</td>
                     <td>{resultat.user ? resultat.user.login : ''}</td>
                     <td>{resultat.race ? <Link to={`race/${resultat.race.id}`}>{resultat.race.id}</Link> : ''}</td>
                     <td className="text-right">

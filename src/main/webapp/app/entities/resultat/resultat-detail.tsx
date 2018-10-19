@@ -29,9 +29,9 @@ export class ResultatDetail extends React.Component<IResultatDetailProps> {
           </h2>
           <dl className="jh-entity-details">
             <dt>
-              <span id="name">Name</span>
+              <span id="chrono">Chrono</span>
             </dt>
-            <dd>{resultatEntity.name}</dd>
+            <dd>{resultatEntity.chrono}</dd>
             <dt>User</dt>
             <dd>{resultatEntity.user ? resultatEntity.user.login : ''}</dd>
             <dt>Race</dt>
