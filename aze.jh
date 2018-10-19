@@ -1,0 +1,19 @@
+entity Resultat {
+	name Integer required
+}
+
+entity Race {
+	title String required
+}
+
+relationship ManyToOne {
+	Resultat{user(login)} to User,
+}
+
+relationship OneToMany {
+	Race{blog(name)} to Resultat
+}
+
+
+
+paginate Resultat, Race with infinite-scroll
