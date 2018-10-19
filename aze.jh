@@ -1,4 +1,4 @@
-entity Result {
+entity Resultat {
 	name Integer required
 }
 
@@ -7,13 +7,13 @@ entity Race {
 }
 
 relationship ManyToOne {
-	Result{user(login)} to User,
+	Resultat{user(login)} to User,
 }
 
 relationship OneToMany {
-	Race{blog(name)} to Result
+	Race{blog(name)} to Resultat
 }
 
 
 
-paginate Entry, Tag with infinite-scroll
+paginate Resultat, Race with infinite-scroll

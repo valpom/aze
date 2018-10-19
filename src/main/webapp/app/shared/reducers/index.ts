@@ -11,6 +11,14 @@ import activate, { ActivateState } from 'app/modules/account/activate/activate.r
 import password, { PasswordState } from 'app/modules/account/password/password.reducer';
 import settings, { SettingsState } from 'app/modules/account/settings/settings.reducer';
 import passwordReset, { PasswordResetState } from 'app/modules/account/password-reset/password-reset.reducer';
+// prettier-ignore
+import resultat, {
+  ResultatState
+} from 'app/entities/resultat/resultat.reducer';
+// prettier-ignore
+import race, {
+  RaceState
+} from 'app/entities/race/race.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -23,6 +31,8 @@ export interface IRootState {
   readonly passwordReset: PasswordResetState;
   readonly password: PasswordState;
   readonly settings: SettingsState;
+  readonly resultat: ResultatState;
+  readonly race: RaceState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -37,6 +47,8 @@ const rootReducer = combineReducers<IRootState>({
   passwordReset,
   password,
   settings,
+  resultat,
+  race,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar
 });
