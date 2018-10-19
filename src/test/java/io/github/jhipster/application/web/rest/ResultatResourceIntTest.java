@@ -39,8 +39,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = AzeApp.class)
 public class ResultatResourceIntTest {
 
-    private static final Integer DEFAULT_NAME = 1;
-    private static final Integer UPDATED_NAME = 2;
+    private static final Integer DEFAULT_CHRONO = 1;
+    private static final Integer UPDATED_CHRONO = 2;
 
     @Autowired
     private ResultatRepository resultatRepository;
@@ -80,7 +80,7 @@ public class ResultatResourceIntTest {
      */
     public static Resultat createEntity(EntityManager em) {
         Resultat resultat = new Resultat()
-            .name(DEFAULT_NAME);
+            .chrono(DEFAULT_CHRONO);
         return resultat;
     }
 
@@ -104,7 +104,7 @@ public class ResultatResourceIntTest {
         List<Resultat> resultatList = resultatRepository.findAll();
         assertThat(resultatList).hasSize(databaseSizeBeforeCreate + 1);
         Resultat testResultat = resultatList.get(resultatList.size() - 1);
-        assertThat(testResultat.getName()).isEqualTo(DEFAULT_NAME);
+        assertThat(testResultat.getChrono()).isEqualTo(DEFAULT_CHRONO);
     }
 
     @Test
@@ -128,10 +128,10 @@ public class ResultatResourceIntTest {
 
     @Test
     @Transactional
-    public void checkNameIsRequired() throws Exception {
+    public void checkChronoIsRequired() throws Exception {
         int databaseSizeBeforeTest = resultatRepository.findAll().size();
         // set the field null
-        resultat.setName(null);
+        resultat.setChrono(null);
 
         // Create the Resultat, which fails.
 
@@ -155,7 +155,7 @@ public class ResultatResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(resultat.getId().intValue())))
-            .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)));
+            .andExpect(jsonPath("$.[*].chrono").value(hasItem(DEFAULT_CHRONO)));
     }
     
     @Test
@@ -169,7 +169,7 @@ public class ResultatResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(resultat.getId().intValue()))
-            .andExpect(jsonPath("$.name").value(DEFAULT_NAME));
+            .andExpect(jsonPath("$.chrono").value(DEFAULT_CHRONO));
     }
 
     @Test
@@ -193,7 +193,7 @@ public class ResultatResourceIntTest {
         // Disconnect from session so that the updates on updatedResultat are not directly saved in db
         em.detach(updatedResultat);
         updatedResultat
-            .name(UPDATED_NAME);
+            .chrono(UPDATED_CHRONO);
 
         restResultatMockMvc.perform(put("/api/resultats")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -204,7 +204,7 @@ public class ResultatResourceIntTest {
         List<Resultat> resultatList = resultatRepository.findAll();
         assertThat(resultatList).hasSize(databaseSizeBeforeUpdate);
         Resultat testResultat = resultatList.get(resultatList.size() - 1);
-        assertThat(testResultat.getName()).isEqualTo(UPDATED_NAME);
+        assertThat(testResultat.getChrono()).isEqualTo(UPDATED_CHRONO);
     }
 
     @Test

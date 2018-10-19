@@ -3,7 +3,7 @@ import { IRace } from 'app/shared/model//race.model';
 
 export interface IResultat {
   id?: number;
-  name?: number;
+  chrono?: number;
   user?: IUser;
   race?: IRace;
 }

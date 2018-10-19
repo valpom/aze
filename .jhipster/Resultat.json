@@ -2,7 +2,7 @@
     "name": "Resultat",
     "fields": [
         {
-            "fieldName": "name",
+            "fieldName": "chrono",
             "fieldType": "Integer",
             "fieldValidateRules": [
                 "required"

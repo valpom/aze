@@ -26,8 +26,8 @@ public class Resultat implements Serializable {
     private Long id;
 
     @NotNull
-    @Column(name = "name", nullable = false)
-    private Integer name;
+    @Column(name = "chrono", nullable = false)
+    private Integer chrono;
 
     @ManyToOne
     @JsonIgnoreProperties("")
@@ -46,17 +46,17 @@ public class Resultat implements Serializable {
         this.id = id;
     }
 
-    public Integer getName() {
-        return name;
+    public Integer getChrono() {
+        return chrono;
     }
 
-    public Resultat name(Integer name) {
-        this.name = name;
+    public Resultat chrono(Integer chrono) {
+        this.chrono = chrono;
         return this;
     }
 
-    public void setName(Integer name) {
-        this.name = name;
+    public void setChrono(Integer chrono) {
+        this.chrono = chrono;
     }
 
     public User getUser() {
@@ -110,7 +110,7 @@ public class Resultat implements Serializable {
     public String toString() {
         return "Resultat{" +
             "id=" + getId() +
-            ", name=" + getName() +
+            ", chrono=" + getChrono() +
             "}";
     }
 }
