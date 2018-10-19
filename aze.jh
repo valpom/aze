@@ -1,5 +1,5 @@
 entity Resultat {
-	name Integer required
+	chrono Integer required
 }
 
 entity Race {
