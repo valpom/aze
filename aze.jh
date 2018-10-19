@@ -1,0 +1,19 @@
+entity Result {
+	name Integer required
+}
+
+entity Race {
+	title String required
+}
+
+relationship ManyToOne {
+	Result{user(login)} to User,
+}
+
+relationship OneToMany {
+	Race{blog(name)} to Result
+}
+
+
+
+paginate Entry, Tag with infinite-scroll
