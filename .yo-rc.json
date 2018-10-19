@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "aze",
+    "packageName": "io.github.jhipster.application",
+    "packageFolder": "io/github/jhipster/application",
+    "serverPort": 8585,
+    "serviceDiscoveryType": false,
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "enableSwaggerCodegen": "true",
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "cucumber"
+    ],
+    "enableTranslation": false,
+    "nativeLanguage": "en",
+    "languages": [
+      "en"
+    ],
+    "clientFramework": "react",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "5.5.0",
+    "jwtSecretKey": "Y2JkNDIzZDQ5YzY1NDk3ZTkyZjBlNGU2NTRhODljZGUyYmQ4NTYxOWFiMDM0M2YxZjdiY2UxYzc2MDUwM2M5ZGM0NmI1ZjI0ODM0M2NlNjQ1Y2FjMWVjNTc1MWFkNzdhZDI2OThlZDljODg5MWRmNzA5ZjI1ZTI1NGE5NzA4ZGM="
+  },
+  "git-provider": "GitHub",
+  "git-company": "valpom",
+  "repository-name": "aze"
+}
